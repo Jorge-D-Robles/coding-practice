@@ -109,3 +109,4 @@ public class Dog {
 ### *Static Variable*
 
 - A variable that is declared with the static keyword. It belongs to the class, not the object.
+
