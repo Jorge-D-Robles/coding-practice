@@ -65,3 +65,47 @@ This will compile the code into a bytecode file with a .class extension.
 
 To run this class, type java filename
 
+Note - to run a class, you *must* define a main method.
+
+<br>
+
+## Terminology
+```
+public class Dog {
+    public int weightInPounds; // instance variable
+
+    public Dog(int startWeight) { // constructor 
+
+        weightInPounds = startWeight;
+    }
+    
+    public void makeNoise() //instance method, non-static
+    {
+        if (weightInPounds < 10) {
+            System.out.println("yip!");
+        } else if (weightInPounds < 30) {
+            System.out.println("bark.");
+        } else {
+            System.out.println("woof!");
+        }
+    }
+}
+```
+### *Constructor* 
+- A special method that is called when an object is created. It is used to initialize the state of the object. It has the same name as the class.
+
+### *Instance Variable*
+
+- A variable that is declared inside a class, but outside of any method. It is called an instance variable because its value is unique to each instance of the class.
+
+### *Instance Method*
+
+- A method that is called on an object. It can access and modify the state of the object with which it is associated.
+
+### *Static Method*
+
+- A method that is called on a class. It cannot access or modify instance variables.
+
+### *Static Variable*
+
+- A variable that is declared with the static keyword. It belongs to the class, not the object.
