@@ -1,0 +1,7 @@
+list = []
+for i in range(5):
+    list.append(f"potatoes# {i}")
+
+for potato in list:
+    print(potato)
+print(list)
