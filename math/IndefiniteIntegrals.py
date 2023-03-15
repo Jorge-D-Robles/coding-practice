@@ -26,7 +26,15 @@ def random_function():
 
     num_functions = randint(1, 4)
     if num_functions == 1:
-        return x**randint(0, 3) * choice(base_functions)
+        operation = choice(['+', '-', '*', '/'])
+        if operation == '+':
+            return (x**randint(0, 3) + choice(base_functions))
+        elif operation == '-':
+            return (x**randint(0, 3) - choice(base_functions))
+        elif operation == '*':
+            return (x**randint(0, 3) * choice(base_functions))
+        elif operation == '/':
+            return (x**randint(0, 3) / choice(base_functions))
     else:
         first_function = choice(base_functions)
         base_functions.remove(first_function)
