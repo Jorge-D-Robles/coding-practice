@@ -13,7 +13,11 @@ def random_function():
     Generate a random function with a combination of trigonometric,
     exponential, and logarithmic functions with random exponents.
     """
+
+    # Generate a random exponent
     random_exponent = randint(1, 3)
+
+    # Create a list of base functions with random coefficients and exponents
     base_functions = [
         randint(1, 5) * sin(x)**randint(1, 3),
         randint(1, 5) * cos(x)**randint(1, 3),
@@ -24,7 +28,10 @@ def random_function():
         randint(1, 5) * x**randint(1, 4)
     ]
 
+    # Decide the number of functions to use in the final expression
     num_functions = randint(1, 4)
+
+    # If only one function (weighed 1/4) should be used, perform a random operation with x raised to a random power
     if num_functions == 1:
         operation = choice(['+', '-', '*', '/'])
         if operation == '+':
@@ -36,9 +43,12 @@ def random_function():
         elif operation == '/':
             return (x**randint(0, 3) / choice(base_functions))
     else:
+        # If two functions (weighed 3/4 chance) should be used, pick two different functions from the list
         first_function = choice(base_functions)
         base_functions.remove(first_function)
         second_function = choice(base_functions)
+
+        # Choose a random operation to combine the two functions
         operation = choice(['+', '-', '*', '/'])
 
         if operation == '+':
