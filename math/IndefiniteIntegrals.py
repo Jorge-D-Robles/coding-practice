@@ -63,6 +63,7 @@ def random_function():
 
 num_problems = int(input('How many problems do you want? '))
 problems_per_page = 5
+print(f'Generating {num_problems} problems...')
 
 # Create a PDF file to save the problems
 with PdfPages('indefinite_integral_problems_solutions.pdf') as pdf:
@@ -81,9 +82,9 @@ with PdfPages('indefinite_integral_problems_solutions.pdf') as pdf:
                 # Choose a random function
                 func = random_function()
 
-                # Integrate the function with a timeout of 1 second
+                # Integrate the function with a timeout of 0.5 seconds
                 try:
-                    integral = func_timeout(1, sp.integrate, args=(func, x))
+                    integral = func_timeout(0.5, sp.integrate, args=(func, x))
                     if not isinstance(integral, sp.Integral):
                         success = True
                 except FunctionTimedOut:
@@ -105,3 +106,4 @@ with PdfPages('indefinite_integral_problems_solutions.pdf') as pdf:
         # Save the plot to the PDF
         pdf.savefig(fig)
         plt.close()
+print('Done! Please check the PDF file in the same folder this script is in.')
