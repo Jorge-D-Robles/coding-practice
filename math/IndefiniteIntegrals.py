@@ -82,9 +82,9 @@ with PdfPages('indefinite_integral_problems_solutions.pdf') as pdf:
                 # Choose a random function
                 func = random_function()
 
-                # Integrate the function with a timeout of 0.5 seconds
+                # Integrate the function with a timeout of 0.4 seconds
                 try:
-                    integral = func_timeout(0.5, sp.integrate, args=(func, x))
+                    integral = func_timeout(0.4, sp.integrate, args=(func, x))
                     if not isinstance(integral, sp.Integral):
                         success = True
                 except FunctionTimedOut:
